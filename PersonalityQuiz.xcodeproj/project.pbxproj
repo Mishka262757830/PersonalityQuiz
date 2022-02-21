@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6619C77027C20D11001D87DD /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6619C76F27C20D11001D87DD /* QuestionsViewController.swift */; };
+		6619C77227C20D24001D87DD /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6619C77127C20D24001D87DD /* ResultViewController.swift */; };
 		6671C51B279C0B2900085361 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6671C51A279C0B2900085361 /* AppDelegate.swift */; };
 		6671C51D279C0B2900085361 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6671C51C279C0B2900085361 /* SceneDelegate.swift */; };
-		6671C51F279C0B2900085361 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6671C51E279C0B2900085361 /* ViewController.swift */; };
+		6671C51F279C0B2900085361 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6671C51E279C0B2900085361 /* IntroductionViewController.swift */; };
 		6671C522279C0B2900085361 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6671C520279C0B2900085361 /* Main.storyboard */; };
 		6671C524279C0B2A00085361 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6671C523279C0B2A00085361 /* Assets.xcassets */; };
 		6671C527279C0B2A00085361 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6671C525279C0B2A00085361 /* LaunchScreen.storyboard */; };
@@ -17,10 +19,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6619C76F27C20D11001D87DD /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
+		6619C77127C20D24001D87DD /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		6671C517279C0B2900085361 /* PersonalityQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalityQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6671C51A279C0B2900085361 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6671C51C279C0B2900085361 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6671C51E279C0B2900085361 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6671C51E279C0B2900085361 /* IntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
 		6671C521279C0B2900085361 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6671C523279C0B2A00085361 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6671C526279C0B2A00085361 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -70,7 +74,9 @@
 		6671C52E279C28CE00085361 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				6671C51E279C0B2900085361 /* ViewController.swift */,
+				6671C51E279C0B2900085361 /* IntroductionViewController.swift */,
+				6619C76F27C20D11001D87DD /* QuestionsViewController.swift */,
+				6619C77127C20D24001D87DD /* ResultViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -181,10 +187,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6671C51F279C0B2900085361 /* ViewController.swift in Sources */,
+				6671C51F279C0B2900085361 /* IntroductionViewController.swift in Sources */,
+				6619C77027C20D11001D87DD /* QuestionsViewController.swift in Sources */,
 				6671C534279C2C1E00085361 /* Question.swift in Sources */,
 				6671C51B279C0B2900085361 /* AppDelegate.swift in Sources */,
 				6671C51D279C0B2900085361 /* SceneDelegate.swift in Sources */,
+				6619C77227C20D24001D87DD /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

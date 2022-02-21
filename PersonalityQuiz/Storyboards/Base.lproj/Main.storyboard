@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Introduction View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PersonalityQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="IntroductionViewController" customModule="PersonalityQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,7 +88,7 @@
         <!--Вопрос №-->
         <scene sceneID="Mt6-tJ-lsc">
             <objects>
-                <viewController id="AWV-yO-HqZ" sceneMemberID="viewController">
+                <viewController id="AWV-yO-HqZ" customClass="QuestionsViewController" customModule="PersonalityQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sb9-Hj-SKX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -100,21 +100,33 @@
                                         <rect key="frame" x="110.5" y="0.0" width="67" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="singleAnswerButtonPressed:" destination="AWV-yO-HqZ" eventType="touchUpInside" id="du6-98-a2i"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0n-Fp-Mu0">
                                         <rect key="frame" x="110.5" y="47" width="67" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="singleAnswerButtonPressed:" destination="AWV-yO-HqZ" eventType="touchUpInside" id="Z1U-dG-7iL"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfN-h7-pDP">
                                         <rect key="frame" x="110.5" y="94" width="67" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="singleAnswerButtonPressed:" destination="AWV-yO-HqZ" eventType="touchUpInside" id="X0d-vz-8Vl"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ztw-bk-PJp">
                                         <rect key="frame" x="110.5" y="141" width="67" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="singleAnswerButtonPressed:" destination="AWV-yO-HqZ" eventType="touchUpInside" id="757-Co-GSL"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -181,6 +193,9 @@
                                         <rect key="frame" x="0.0" y="188" width="288" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Ответить"/>
+                                        <connections>
+                                            <action selector="multipleAnswerButtonPressed" destination="AWV-yO-HqZ" eventType="touchUpInside" id="BKc-pr-uWo"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -211,6 +226,9 @@
                                         <rect key="frame" x="0.0" y="134.5" width="288" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Ответить"/>
+                                        <connections>
+                                            <action selector="rangedAnswerButtonPressed" destination="AWV-yO-HqZ" eventType="touchUpInside" id="SMb-4G-juV"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -253,14 +271,28 @@
                             <constraint firstItem="UM3-m0-P6y" firstAttribute="leading" secondItem="dPS-0A-K48" secondAttribute="leading" constant="16" id="xFi-KA-BR2"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Вопрос №" id="79i-yD-bbc">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="DUX-Vn-JwC">
-                            <connections>
-                                <segue destination="xhO-me-Gks" kind="show" id="3gR-Xu-7PH"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Вопрос №" id="79i-yD-bbc"/>
                     <connections>
+                        <outlet property="multipleStackView" destination="cvM-JP-U5y" id="6ia-Gd-6jJ"/>
+                        <outlet property="questionLabel" destination="vHw-nZ-Oi5" id="DV3-SG-053"/>
+                        <outlet property="questionProgressView" destination="gC4-PM-aQc" id="Qn9-EE-ts0"/>
+                        <outlet property="rangedSlider" destination="3gm-ng-8sd" id="afb-fR-Rg0"/>
+                        <outlet property="rangedStackView" destination="sdV-fs-dmB" id="w99-cR-sXC"/>
+                        <outlet property="singleStackView" destination="UM3-m0-P6y" id="Tk9-Uw-2ct"/>
+                        <outletCollection property="singleButtons" destination="r7l-kU-siT" collectionClass="NSMutableArray" id="eEe-9T-uVG"/>
+                        <outletCollection property="singleButtons" destination="c0n-Fp-Mu0" collectionClass="NSMutableArray" id="dCP-d2-CZu"/>
+                        <outletCollection property="singleButtons" destination="yfN-h7-pDP" collectionClass="NSMutableArray" id="VDL-g9-zNE"/>
+                        <outletCollection property="singleButtons" destination="Ztw-bk-PJp" collectionClass="NSMutableArray" id="8QL-Rw-BfH"/>
+                        <outletCollection property="multipleLabels" destination="aWo-cF-AYn" collectionClass="NSMutableArray" id="CdN-FU-YGQ"/>
+                        <outletCollection property="multipleLabels" destination="ReO-Gf-KKu" collectionClass="NSMutableArray" id="bXL-h7-sL7"/>
+                        <outletCollection property="multipleLabels" destination="0L7-qf-Ned" collectionClass="NSMutableArray" id="IFa-iN-gFP"/>
+                        <outletCollection property="multipleLabels" destination="gP8-Ff-wUU" collectionClass="NSMutableArray" id="a0I-bB-ZO9"/>
+                        <outletCollection property="multipleSwitches" destination="GhA-lO-LNm" collectionClass="NSMutableArray" id="Wsh-Rx-huV"/>
+                        <outletCollection property="multipleSwitches" destination="Zd0-oi-7rL" collectionClass="NSMutableArray" id="HCf-5W-pxS"/>
+                        <outletCollection property="multipleSwitches" destination="YDF-PK-OnC" collectionClass="NSMutableArray" id="4cc-ML-Wkh"/>
+                        <outletCollection property="multipleSwitches" destination="cZr-9J-3uT" collectionClass="NSMutableArray" id="3m9-5I-l10"/>
+                        <outletCollection property="rangedLabels" destination="KRM-t1-Iwd" collectionClass="NSMutableArray" id="BaJ-xW-ytl"/>
+                        <outletCollection property="rangedLabels" destination="zXV-aZ-TR3" collectionClass="NSMutableArray" id="Hmw-bV-P90"/>
                         <segue destination="xhO-me-Gks" kind="show" identifier="showResult" id="k5b-ge-RlM"/>
                     </connections>
                 </viewController>
@@ -271,7 +303,7 @@
         <!--Результат-->
         <scene sceneID="ay9-99-Odc">
             <objects>
-                <viewController id="xhO-me-Gks" sceneMemberID="viewController">
+                <viewController id="xhO-me-Gks" customClass="ResultViewController" customModule="PersonalityQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4V3-ya-nHe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -303,10 +335,19 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Результат" id="pxx-iJ-g5A">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="AlE-sk-Bwh"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="AlE-sk-Bwh">
+                            <connections>
+                                <segue destination="DfY-GV-TDd" kind="unwind" unwindAction="unwindWithSegue:" id="pH0-XP-2ka"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="resultLabel" destination="b8L-x5-Z84" id="cxq-8e-4oA"/>
+                        <outlet property="resultText" destination="LdF-EZ-c3u" id="Wvj-PN-qce"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rY2-fq-2gV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="DfY-GV-TDd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2171" y="79"/>
         </scene>
@@ -329,9 +370,6 @@
             <point key="canvasLocation" x="712.5" y="78.16901408450704"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="k5b-ge-RlM"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
